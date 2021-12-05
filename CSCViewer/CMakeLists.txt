@@ -1,0 +1,40 @@
+cmake_minimum_required (VERSION 3.16)
+
+project(CSCViewer VERSION 1.0 LANGUAGES CXX)
+
+set(CMAKE_AUTOUIC ON)
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
+file(GLOB CSC_VIEWER_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp)
+file(GLOB CSC_VIEWER_SOURSES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+file(GLOB CSC_VIEWER_FORMS ${CMAKE_CURRENT_SOURCE_DIR}/src/*.ui)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+set(CSC_VIEWER_SOURCES
+    ${CSC_VIEWER_HEADERS}
+    ${CSC_VIEWER_SOURSES}
+    ${CSC_VIEWER_FORMS}
+)
+
+if(WIN32)
+	add_executable(${PROJECT_NAME} WIN32
+		${CSC_VIEWER_SOURCES}
+	)
+else()
+	add_executable(${PROJECT_NAME}
+		${CSC_VIEWER_SOURCES}
+	)
+endif()
+
+set(CSC_VIEWER_LIBRARIES
+	Qt5::Widgets
+	CSCEngine
+)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+    ${CSC_VIEWER_LIBRARIES}
+)

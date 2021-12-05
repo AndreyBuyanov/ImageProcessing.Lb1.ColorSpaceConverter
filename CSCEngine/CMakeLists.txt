@@ -1,0 +1,25 @@
+cmake_minimum_required (VERSION 3.16)
+
+project(CSCEngine VERSION 1.0 LANGUAGES CXX)
+
+file(GLOB CSC_ENGINE_HEADERS ${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp)
+file(GLOB CSC_ENGINE_SOURSES ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+
+add_library(${PROJECT_NAME} STATIC
+	${CSC_ENGINE_HEADERS}
+	${CSC_ENGINE_SOURSES}
+)
+
+set(CSC_ENGINE_LIBRARIES
+    xtensor::xtensor
+)
+
+target_link_libraries(${PROJECT_NAME} PRIVATE
+	${CSC_ENGINE_LIBRARIES}
+)
+
+set_target_properties(${PROJECT_NAME} PROPERTIES
+    INTERFACE_INCLUDE_DIRECTORIES ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
