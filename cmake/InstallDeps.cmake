@@ -24,3 +24,21 @@ conan_cmake_install(PATH_OR_REFERENCE .
                     SETTINGS ${settings})
 
 find_package(xtensor REQUIRED)
+
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
+if (NOT Qt5_FOUND)
+
+    conan_cmake_configure(REQUIRES qt/5.15.2
+            GENERATORS cmake_find_package)
+
+    conan_cmake_autodetect(settings)
+
+    conan_cmake_install(PATH_OR_REFERENCE .
+            BUILD missing
+            REMOTE conancenter
+            SETTINGS ${settings})
+
+    find_package(Qt5 COMPONENTS Widgets REQUIRED)
+
+endif()
