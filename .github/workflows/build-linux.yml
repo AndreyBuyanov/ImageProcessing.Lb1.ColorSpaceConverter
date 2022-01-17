@@ -13,6 +13,9 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
+    
+    - name: Install Conan
+      run: pip install conan
 
     - name: Configure
       run: cmake -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo -B build -G "Unix Makefiles"
