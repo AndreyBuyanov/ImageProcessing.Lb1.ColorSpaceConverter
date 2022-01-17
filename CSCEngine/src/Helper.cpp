@@ -165,7 +165,7 @@ void Helper::V2RGB(
 
 void Helper::ChangeH(
     std::unique_ptr<HSVImage>& image,
-    const int value)
+    int value)
 {
     std::size_t size = image->GetWidth() * image->GetHeight() * 3;
     std::vector<std::size_t> shape = {
@@ -186,7 +186,7 @@ void Helper::ChangeH(
 
 void Helper::ChangeS(
     std::unique_ptr<HSVImage>& image,
-    const int value)
+    int value)
 {
     std::size_t size = image->GetWidth() * image->GetHeight() * 3;
     std::vector<std::size_t> shape = {
@@ -207,7 +207,7 @@ void Helper::ChangeS(
 
 void Helper::ChangeV(
     std::unique_ptr<HSVImage>& image,
-    const int value)
+    int value)
 {
     std::size_t size = image->GetWidth() * image->GetHeight() * 3;
     std::vector<std::size_t> shape = {
@@ -228,7 +228,7 @@ void Helper::ChangeV(
 
 void Helper::ChangeY(
     std::unique_ptr<YUVImage>& image,
-    const int value)
+    int value)
 {
     std::size_t size = image->GetWidth() * image->GetHeight() * 3;
     std::vector<std::size_t> shape = {
@@ -250,7 +250,7 @@ void Helper::ChangeY(
 
 void Helper::ChangeU(
     std::unique_ptr<YUVImage>& image,
-    const int value)
+    int value)
 {
     std::size_t size = image->GetWidth() * image->GetHeight() * 3;
     std::vector<std::size_t> shape = {
@@ -272,7 +272,7 @@ void Helper::ChangeU(
 
 void Helper::ChangeV(
     std::unique_ptr<YUVImage>& image,
-    const int value)
+    int value)
 {
     std::size_t size = image->GetWidth() * image->GetHeight() * 3;
     std::vector<std::size_t> shape = {

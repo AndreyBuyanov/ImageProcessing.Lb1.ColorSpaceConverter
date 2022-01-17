@@ -13,17 +13,17 @@ class IConverter
 public:
     virtual ~IConverter() = default;
 
-    virtual std::unique_ptr<YUVImage> Convert(
+    [[nodiscard]] virtual std::unique_ptr<YUVImage> Convert(
         const RGBImageView& image,
-        const YUVType imageType) const = 0;
+        YUVType imageType) const = 0;
 
-    virtual std::unique_ptr<HSVImage> Convert(
+    [[nodiscard]] virtual std::unique_ptr<HSVImage> Convert(
         const RGBImageView& image) const = 0;
 
     virtual void Convert(
         RGBImageView outputImage,
         const std::unique_ptr<YUVImage>& inputImage,
-        const YUVType imageType) const = 0;
+        YUVType imageType) const = 0;
 
     virtual void Convert(
         RGBImageView outputImage,

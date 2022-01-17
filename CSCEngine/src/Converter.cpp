@@ -60,7 +60,7 @@ static void HSV2RGB(
     float& b)
 {
     float c = v * s;
-    float hPrime = static_cast<float>(std::fmod(h / 60.0f, 6));
+    auto hPrime = static_cast<float>(std::fmod(h / 60.0f, 6));
     float x = c * (1 - std::fabs(std::fmod(hPrime, 2.0f) - 1.0f));
     float m = v - c;
 

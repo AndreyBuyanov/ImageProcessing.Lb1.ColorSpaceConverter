@@ -29,22 +29,22 @@ public:
         RGBImageView outputImage);
     static void ChangeH(
         std::unique_ptr<HSVImage>& image,
-        const int value);
+        int value);
     static void ChangeS(
         std::unique_ptr<HSVImage>& image,
-        const int value);
+        int value);
     static void ChangeV(
         std::unique_ptr<HSVImage>& image,
-        const int value);
+        int value);
     static void ChangeY(
         std::unique_ptr<YUVImage>& image,
-        const int value);
+        int value);
     static void ChangeU(
         std::unique_ptr<YUVImage>& image,
-        const int value);
+        int value);
     static void ChangeV(
         std::unique_ptr<YUVImage>& image,
-        const int value);
+        int value);
 };
 
 }

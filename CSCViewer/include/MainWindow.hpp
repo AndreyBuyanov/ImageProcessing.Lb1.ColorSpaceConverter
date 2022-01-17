@@ -30,7 +30,7 @@ private slots:
     void on_actionExit_triggered();
     void resetSliders();
     void updateLabels(
-        const int value);
+        int value);
 private:
     Ui::MainWindow* ui;
     std::unique_ptr<Manager> m_Manager;

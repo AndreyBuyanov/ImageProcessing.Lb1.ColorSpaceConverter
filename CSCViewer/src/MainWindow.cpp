@@ -129,7 +129,7 @@ void MainWindow::resetSliders()
 }
 
 void MainWindow::updateLabels(
-    const int value)
+    int value)
 {
     if (0 == value || 1 == value) {
         ui->lbChannel1->setText("Y");

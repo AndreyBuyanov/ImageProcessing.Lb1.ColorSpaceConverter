@@ -8,19 +8,11 @@ namespace CSCEngine
 {
 
 template <typename T>
-struct pointer_wrapper
-{
-    using data_t = T*;
-    using const_data_t = const T*;
-};
-
-template <typename T>
 class Abstract3ChannelImage
 {
 public:
     using data_t = typename std::vector<T>::pointer;
     using const_data_t = typename std::vector<T>::const_pointer;
-    using value_t = typename std::vector<T>::value_type;
 public:
     Abstract3ChannelImage(
         const std::size_t width,
@@ -28,19 +20,19 @@ public:
         : m_width(width)
         , m_height(height)
         , m_data(width * height * 3) {}
-    const_data_t GetData() const
+    [[nodiscard]] const_data_t GetData() const
     {
         return m_data.data();
     }
-    data_t GetData()
+    [[nodiscard]] data_t GetData()
     {
         return m_data.data();
     }
-    std::size_t GetWidth() const
+    [[nodiscard]] std::size_t GetWidth() const
     {
         return m_width;
     }
-    std::size_t GetHeight() const
+    [[nodiscard]] std::size_t GetHeight() const
     {
         return m_height;
     }
@@ -58,8 +50,8 @@ using HSVImage = Abstract3ChannelImage<float>;
 class RGBImageView
 {
 public:
-    using data_t = typename pointer_wrapper<std::uint8_t>::data_t;
-    using const_data_t = typename pointer_wrapper<std::uint8_t>::const_data_t;
+    using data_t = std::uint8_t*;
+    using const_data_t = const std::uint8_t*;
 public:
     RGBImageView() = default;
     RGBImageView(
@@ -69,19 +61,19 @@ public:
         : m_data(data)
         , m_width(width)
         , m_height(height) {}
-    const_data_t GetData() const
+    [[nodiscard]] const_data_t GetData() const
     {
         return m_data;
     }
-    data_t GetData()
+    [[nodiscard]] data_t GetData()
     {
         return m_data;
     }
-    std::size_t GetWidth() const
+    [[nodiscard]] std::size_t GetWidth() const
     {
         return m_width;
     }
-    std::size_t GetHeight() const
+    [[nodiscard]] std::size_t GetHeight() const
     {
         return m_height;
     }

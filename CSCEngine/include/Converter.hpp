@@ -10,19 +10,19 @@ class Converter
 {
 public:
     Converter() = default;
-    virtual ~Converter() = default;
+    ~Converter() override = default;
 
-    std::unique_ptr<YUVImage> Convert(
+    [[nodiscard]] std::unique_ptr<YUVImage> Convert(
         const RGBImageView& image,
-        const YUVType imageType) const override;
+        YUVType imageType) const override;
 
-    std::unique_ptr<HSVImage> Convert(
+    [[nodiscard]] std::unique_ptr<HSVImage> Convert(
         const RGBImageView& image) const override;
 
     void Convert(
         RGBImageView outputImage,
         const std::unique_ptr<YUVImage>& inputImage,
-        const YUVType imageType) const override;
+        YUVType imageType) const override;
 
     void Convert(
         RGBImageView outputImage,

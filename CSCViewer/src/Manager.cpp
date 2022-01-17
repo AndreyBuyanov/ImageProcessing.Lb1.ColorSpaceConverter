@@ -207,7 +207,7 @@ bool Manager::saveChannel3(
 }
 
 void Manager::onChangeChannel1Value(
-    const int value)
+    int value)
 {
     if (!m_initialized) {
         return;
@@ -217,7 +217,7 @@ void Manager::onChangeChannel1Value(
 }
 
 void Manager::onChangeChannel2Value(
-    const int value)
+    int value)
 {
     if (!m_initialized) {
         return;
@@ -227,7 +227,7 @@ void Manager::onChangeChannel2Value(
 }
 
 void Manager::onChangeChannel3Value(
-    const int value)
+    int value)
 {
     if (!m_initialized) {
         return;
@@ -237,7 +237,7 @@ void Manager::onChangeChannel3Value(
 }
 
 void Manager::onChangeColorSpaceType(
-    const int type)
+    int type)
 {
     m_type = static_cast<ColorSpaceType>(type);
     if (!m_initialized) {

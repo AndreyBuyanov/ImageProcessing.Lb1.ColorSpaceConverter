@@ -43,22 +43,22 @@ signals:
         const QImage* image);
 public slots:
     void onChangeChannel1Value(
-        const int value);
+        int value);
     void onChangeChannel2Value(
-        const int value);
+        int value);
     void onChangeChannel3Value(
-        const int value);
+        int value);
     void onChangeColorSpaceType(
-        const int type);
+        int type);
     void onReset();
 private:
     void initImage();
     void changeChannel1(
-        const int dValue);
+        int dValue);
     void changeChannel2(
-        const int dValue);
+        int dValue);
     void changeChannel3(
-        const int dValue);
+        int dValue);
     void updateChannel1();
     void updateChannel2();
     void updateChannel3();

@@ -4,3 +4,5 @@
 /lib-release/
 /build/
 /.vscode
+/cmake-build-*
+/.idea
