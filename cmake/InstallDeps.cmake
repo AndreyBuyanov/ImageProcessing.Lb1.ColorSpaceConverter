@@ -25,9 +25,9 @@ conan_cmake_install(PATH_OR_REFERENCE .
 
 find_package(xtensor REQUIRED)
 
-find_package(Qt5 COMPONENTS Widgets REQUIRED)
+find_package(Qt5 COMPONENTS Widgets)
 
-if (NOT Qt5_FOUND)
+if (NOT Qt5_FOUND OR NOT Qt5Widgets_FOUND)
 
     conan_cmake_configure(REQUIRES qt/5.15.2
             GENERATORS cmake_find_package)
